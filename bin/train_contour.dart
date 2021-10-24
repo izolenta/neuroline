@@ -28,6 +28,8 @@ void main(List args) async {
     trainData.add(TrainingData(sourceBlock, destinationBlock));
   }
   perceptron.train(trainData);
+  final result = File('trained.json');
+  result.writeAsStringSync(perceptron.toJson());
   print(perceptron.toJson());
 }
 
